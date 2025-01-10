@@ -114,7 +114,7 @@ def main():
     sampler = DistributedSampler(dataset) # this DistributedSampler function ensures each model get a unique batch of data samples
     dataloader = DataLoader(dataset, batch_size=bs, sampler=sampler, num_workers=4,pin_memory=True,shuffle=False)
 
-    # Initialize the faiss vectorstore
+    # Initialize the faiss vectorstore, maybe needs to be changed if using faiss-gpu.
     index = faiss.IndexFlatL2(model.module.config.hidden_size)
 
 
