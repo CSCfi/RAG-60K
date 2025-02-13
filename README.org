@@ -4,7 +4,7 @@
 #+OPTIONS: num:nil
 
 #+ATTR_HTML: :style display:block; margin:0 auto; width:50%;
-[[file:./Faiss_DDP.png]]
+[[file:./Faiss_DDP.jpg]]
 
 \\
 

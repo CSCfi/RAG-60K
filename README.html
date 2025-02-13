@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-02-13 Thu 12:34 -->
+<!-- 2025-02-13 Thu 12:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RAG-60K</title>
@@ -198,25 +198,25 @@
 <div id="content" class="content">
 <h1 class="title">RAG-60K</h1>
 
-<div id="orgcb71ae2" class="figure">
-<p><img src="./Faiss_DDP.png" alt="Faiss_DDP.png" style="display:block; margin:0 auto; width:50%;" />
+<div id="org5b4557f" class="figure">
+<p><img src="./Faiss_DDP.jpg" alt="Faiss_DDP.jpg" style="display:block; margin:0 auto; width:50%;" />
 </p>
 </div>
 
 <p>
 <br />
 </p>
-<div id="outline-container-org84f233e" class="outline-2">
-<h2 id="org84f233e">Introduction to RAG</h2>
-<div class="outline-text-2" id="text-org84f233e">
+<div id="outline-container-org6fcb2d8" class="outline-2">
+<h2 id="org6fcb2d8">Introduction to RAG</h2>
+<div class="outline-text-2" id="text-org6fcb2d8">
 <p>
 Retrieval-Augmented Generation (RAG) is a powerful technique that enhances language models by incorporating external knowledge retrieval. Instead of relying solely on pre-trained knowledge, RAG fetches relevant information from a document store or a vector database, improving response accuracy and reducing hallucinations. This approach is particularly beneficial for applications like question-answering, summarization, and chatbot development, where real-time and up-to-date information is crucial. RAG has gained popularity because it effectively bridges the gap between retrieval-based and generative models. It allows models to provide factually accurate answers without the need for frequent retraining. Additionally, RAG enhances interpretability, as users can trace responses back to retrieved documents.
 </p>
 </div>
 </div>
-<div id="outline-container-org30fd59a" class="outline-2">
-<h2 id="org30fd59a">Motivation of RAG-60K</h2>
-<div class="outline-text-2" id="text-org30fd59a">
+<div id="outline-container-orgb6123e5" class="outline-2">
+<h2 id="orgb6123e5">Motivation of RAG-60K</h2>
+<div class="outline-text-2" id="text-orgb6123e5">
 <p>
 Several frameworks have emerged to streamline the implementation of RAG pipelines, including LangChain and LlamaIndex. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
 </p>
@@ -230,31 +230,31 @@ This repository provides an alternative method to implement a scalable RAG pipel
 </p>
 </div>
 </div>
-<div id="outline-container-orga910e2c" class="outline-2">
-<h2 id="orga910e2c">Usage</h2>
-<div class="outline-text-2" id="text-orga910e2c">
+<div id="outline-container-orgb9d49b0" class="outline-2">
+<h2 id="orgb9d49b0">Usage</h2>
+<div class="outline-text-2" id="text-orgb9d49b0">
 </div>
-<div id="outline-container-orgf4da8cd" class="outline-3">
-<h3 id="orgf4da8cd">Generate embedding vectors</h3>
-<div class="outline-text-3" id="text-orgf4da8cd">
+<div id="outline-container-orgef7e1d9" class="outline-3">
+<h3 id="orgef7e1d9">Generate embedding vectors</h3>
+<div class="outline-text-3" id="text-orgef7e1d9">
 <div class="org-src-container">
 <pre class="src src-bash">sbatch run_ingest.sh
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0d8a4b0" class="outline-3">
-<h3 id="org0d8a4b0">Merge the embedding vectors to faiss vector store</h3>
-<div class="outline-text-3" id="text-org0d8a4b0">
+<div id="outline-container-orged6d248" class="outline-3">
+<h3 id="orged6d248">Merge the embedding vectors to faiss vector store</h3>
+<div class="outline-text-3" id="text-orged6d248">
 <div class="org-src-container">
 <pre class="src src-bash">sbatch run_merge.sh
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc1500fc" class="outline-3">
-<h3 id="orgc1500fc">Retrieval</h3>
-<div class="outline-text-3" id="text-orgc1500fc">
+<div id="outline-container-orgca82b80" class="outline-3">
+<h3 id="orgca82b80">Retrieval</h3>
+<div class="outline-text-3" id="text-orgca82b80">
 <p>
 During the retrieval process, we use 1 gpu interactively
 </p>
@@ -271,9 +271,9 @@ python retriever_faiss.py
 </div>
 </div>
 </div>
-<div id="outline-container-org484ab7e" class="outline-3">
-<h3 id="org484ab7e">Notes</h3>
-<div class="outline-text-3" id="text-org484ab7e">
+<div id="outline-container-orgb344b79" class="outline-3">
+<h3 id="orgb344b79">Notes</h3>
+<div class="outline-text-3" id="text-orgb344b79">
 <ul class="org-ul">
 <li>CSC modulefiles and CSC preinstalled pytorch cover most of the libraries needed to run the codes in this project, except langchain library. One can set up their own environment and install langchain and other libraries if needed.</li>
 
@@ -282,9 +282,9 @@ python retriever_faiss.py
 </div>
 </div>
 </div>
-<div id="outline-container-org9242873" class="outline-2">
-<h2 id="org9242873">License</h2>
-<div class="outline-text-2" id="text-org9242873">
+<div id="outline-container-orgfea2687" class="outline-2">
+<h2 id="orgfea2687">License</h2>
+<div class="outline-text-2" id="text-orgfea2687">
 <p>
 MIT License
 </p>
@@ -293,7 +293,7 @@ MIT License
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Shanshan Wang</p>
-<p class="date">Created: 2025-02-13 Thu 12:34</p>
+<p class="date">Created: 2025-02-13 Thu 12:41</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
