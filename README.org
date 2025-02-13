@@ -13,7 +13,8 @@
 Retrieval-Augmented Generation (RAG) is a powerful technique that enhances language models by incorporating external knowledge retrieval. Instead of relying solely on pre-trained knowledge, RAG fetches relevant information from a document store or a vector database, improving response accuracy and reducing hallucinations. This approach is particularly beneficial for applications like question-answering, summarization, and chatbot development, where real-time and up-to-date information is crucial. RAG has gained popularity because it effectively bridges the gap between retrieval-based and generative models. It allows models to provide factually accurate answers without the need for frequent retraining. Additionally, RAG enhances interpretability, as users can trace responses back to retrieved documents.
 
 * Motivation of RAG-60K
-Several frameworks have emerged to streamline the implementation of RAG pipelines, including LangChain and LlamaIndex. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
+Several frameworks have emerged to streamline the implementation of RAG pipelines, including LangChain and LlamaIndex.
+We have implemented a chatbot based on langChain framework where the documents include a few research papers and some personal websites. Please refer to another [[https://github.com/shanshanwangcsc/simple_chatbot][repo]] if one is interested. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
 
 Most scalable solutions available today require paid services, such as RAY—a distributed computing framework that enables large-scale parallel processing for RAG, but comes with infrastructure costs—and commercial vector stores. Many paid solutions (e.g., Pinecone, Weaviate, and AWS OpenSearch) offer scalability but at the cost of vendor lock-in and high operational expenses.
 
