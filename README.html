@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-13 Thu 12:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RAG-60K</title>
+<meta name="author" content="Shanshan Wang" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">RAG-60K</h1>
+
+<div id="orgcb71ae2" class="figure">
+<p><img src="./Faiss_DDP.png" alt="Faiss_DDP.png" style="display:block; margin:0 auto; width:50%;" />
+</p>
+</div>
+
+<p>
+<br />
+</p>
+<div id="outline-container-org84f233e" class="outline-2">
+<h2 id="org84f233e">Introduction to RAG</h2>
+<div class="outline-text-2" id="text-org84f233e">
+<p>
+Retrieval-Augmented Generation (RAG) is a powerful technique that enhances language models by incorporating external knowledge retrieval. Instead of relying solely on pre-trained knowledge, RAG fetches relevant information from a document store or a vector database, improving response accuracy and reducing hallucinations. This approach is particularly beneficial for applications like question-answering, summarization, and chatbot development, where real-time and up-to-date information is crucial. RAG has gained popularity because it effectively bridges the gap between retrieval-based and generative models. It allows models to provide factually accurate answers without the need for frequent retraining. Additionally, RAG enhances interpretability, as users can trace responses back to retrieved documents.
+</p>
+</div>
+</div>
+<div id="outline-container-org30fd59a" class="outline-2">
+<h2 id="org30fd59a">Motivation of RAG-60K</h2>
+<div class="outline-text-2" id="text-org30fd59a">
+<p>
+Several frameworks have emerged to streamline the implementation of RAG pipelines, including LangChain and LlamaIndex. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
+</p>
+
+<p>
+Most scalable solutions available today require paid services, such as RAY—a distributed computing framework that enables large-scale parallel processing for RAG, but comes with infrastructure costs—and commercial vector stores. Many paid solutions (e.g., Pinecone, Weaviate, and AWS OpenSearch) offer scalability but at the cost of vendor lock-in and high operational expenses.
+</p>
+
+<p>
+This repository provides an alternative method to implement a scalable RAG pipeline from scratch by leveraging PyTorch Distributed Data Parallel (DDP) for efficient parallel processing across multiple GPUs and FAISS-GPU, which utilizes Facebook AI Similarity Search (FAISS) with GPU acceleration to perform efficient nearest neighbor search at scale. The figure above illustrates the complete workflow of our approach, highlighting how we distribute data and efficiently build the FAISS vector store.
+</p>
+</div>
+</div>
+<div id="outline-container-orga910e2c" class="outline-2">
+<h2 id="orga910e2c">Usage</h2>
+<div class="outline-text-2" id="text-orga910e2c">
+</div>
+<div id="outline-container-orgf4da8cd" class="outline-3">
+<h3 id="orgf4da8cd">Generate embedding vectors</h3>
+<div class="outline-text-3" id="text-orgf4da8cd">
+<div class="org-src-container">
+<pre class="src src-bash">sbatch run_ingest.sh
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d8a4b0" class="outline-3">
+<h3 id="org0d8a4b0">Merge the embedding vectors to faiss vector store</h3>
+<div class="outline-text-3" id="text-org0d8a4b0">
+<div class="org-src-container">
+<pre class="src src-bash">sbatch run_merge.sh
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc1500fc" class="outline-3">
+<h3 id="orgc1500fc">Retrieval</h3>
+<div class="outline-text-3" id="text-orgc1500fc">
+<p>
+During the retrieval process, we use 1 gpu interactively
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">srun --account=project_462000824 --partition=small-g --ntasks=1 --cpus-per-task=7 --gpus-per-node=1 --mem=60G --time=00:30:00 --nodes=1 --pty bash
+
+module purge
+module use /appl/local/csc/modulefiles
+module load pytorch
+<span style="color: #5faaef;">source</span> /scratch/project_462000824/rag_venv/bin/activate
+<span style="color: #5faaef;">export</span> <span style="color: #af85ff;">PYTHONPATH</span>=$<span style="color: #af85ff;">PYTHONPATH</span>:/scratch/project_462000824/rag_venv/lib/python3.10/site-packages
+python retriever_faiss.py
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org484ab7e" class="outline-3">
+<h3 id="org484ab7e">Notes</h3>
+<div class="outline-text-3" id="text-org484ab7e">
+<ul class="org-ul">
+<li>CSC modulefiles and CSC preinstalled pytorch cover most of the libraries needed to run the codes in this project, except langchain library. One can set up their own environment and install langchain and other libraries if needed.</li>
+
+<li>faiss can do more than retrieving one query, with the multiple gpu support, it can handle tens of thousands of queries like stated in this <a href="https://github.com/facebookresearch/faiss/blob/main/tutorial/python/5-Multiple-GPUs.py">website</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9242873" class="outline-2">
+<h2 id="org9242873">License</h2>
+<div class="outline-text-2" id="text-org9242873">
+<p>
+MIT License
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Shanshan Wang</p>
+<p class="date">Created: 2025-02-13 Thu 12:34</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
