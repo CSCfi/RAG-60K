@@ -54,6 +54,18 @@ class JSONTextDataset(Dataset):
         for entry in self.data:
             filename = entry.get('filename')
             text = entry.get('text', '')
+            # Fix broken words (remove hyphen and join with next word)
+            text = re.sub(r'(\w+)-\n(\w+)', r'\1\2', text)
+
+            # Remove unnecessary newline characters that split words or sentences
+            text = re.sub(r'(?<=\w)\n(?=\w)', ' ', text)
+
+            # Fix any multiple spaces into a single space
+            text = re.sub(r'\s+', ' ', text)
+
+            # Remove any extra newlines that split paragraphs or sentences
+            text = re.sub(r'\n+', '\n', text)
+
             text_chunks = self.text_splitter.split_text(text)
             for idx, chunk in enumerate(text_chunks):
                 processed_data.append((filename, idx,chunk))
