@@ -33,6 +33,7 @@ This repository provides an alternative method to implement a scalable RAG pipel
 #+end_src
 
 ** Retrieval
+*** Using GPT models from openAI
 During the retrieval process, we use 1 gpu interactively
 #+begin_src bash
     srun --account=project_462000824 --partition=small-g --ntasks=1 --cpus-per-task=7 --gpus-per-node=1 --mem=60G --time=00:30:00 --nodes=1 --pty bash
@@ -40,8 +41,19 @@ During the retrieval process, we use 1 gpu interactively
     module purge
     module use /appl/local/csc/modulefiles
     module load pytorch
-    source /scratch/project_462000824/rag_venv/bin/activate
-    export PYTHONPATH=$PYTHONPATH:/scratch/project_462000824/rag_venv/lib/python3.10/site-packages
+    python retriever_faiss.py
+#+end_src
+
+*** Using open source Llama models
+During the retrieval process, we use 1 gpu interactively
+#+begin_src bash
+    srun --account=project_462000824 --partition=small-g --ntasks=1 --cpus-per-task=7 --gpus-per-node=1 --mem=60G --time=00:30:00 --nodes=1 --pty bash
+
+    module purge
+    module use /appl/local/csc/modulefiles
+    module load pytorch
+    export HF_HOME=/scratch/project_465000454/${USER}/hf-cache
+    huggingface-cli login # put your token in the terminal
     python retriever_faiss.py
 #+end_src
 ** Notes
