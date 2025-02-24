@@ -14,7 +14,7 @@ Retrieval-Augmented Generation (RAG) is a powerful technique that enhances langu
 
 * Motivation of RAG-60K
 Several frameworks have emerged to streamline the implementation of RAG pipelines, including LangChain and LlamaIndex.
-We have implemented a chatbot based on langChain framework where the documents include a few research papers and some personal websites. Please refer to another [[https://github.com/shanshanwangcsc/simple_chatbot][repo]] if one is interested. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
+We have implemented a chatbot based on langChain framework where the documents include a few research papers and some personal websites. Please refer to another [[https://github.com/shanshanwangcsc/simple_chatbot][repo]] (Currently, this repo is private) if one is interested. While both offer great abstraction layers, they face limitations when scaling to massive datasets.
 
 Most scalable solutions available today require paid services, such as RAY—a distributed computing framework that enables large-scale parallel processing for RAG, but comes with infrastructure costs—and commercial vector stores. Many paid solutions (e.g., Pinecone, Weaviate, and AWS OpenSearch) offer scalability but at the cost of vendor lock-in and high operational expenses.
 
