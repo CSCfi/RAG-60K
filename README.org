@@ -19,6 +19,10 @@ We have implemented a chatbot based on langChain framework where the documents i
 Most scalable solutions available today require paid services, such as RAY—a distributed computing framework that enables large-scale parallel processing for RAG, but comes with infrastructure costs—and commercial vector stores. Many paid solutions (e.g., Pinecone, Weaviate, and AWS OpenSearch) offer scalability but at the cost of vendor lock-in and high operational expenses.
 
 This repository provides an alternative method to implement a scalable RAG pipeline from scratch by leveraging PyTorch Distributed Data Parallel (DDP) for efficient parallel processing across multiple GPUs and FAISS-GPU, which utilizes Facebook AI Similarity Search (FAISS) with GPU acceleration to perform efficient nearest neighbor search at scale. The figure above illustrates the complete workflow of our approach, highlighting how we distribute data and efficiently build the FAISS vector store.
+
+* Data
+To download the data used in this project, please refer to the /*data*/ folder under this repo.
+
 * Usage
 
 ** Generate embedding vectors
