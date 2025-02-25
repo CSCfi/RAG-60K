@@ -8,21 +8,13 @@ This repo contains scripts which download the scientific publications and extrac
 sbatch download_links.sh
 ```
 
-All the links of the articles are stored in the folder **csv_files**. It is quite large, one can access it from
-```
-/scratch/project_465000454/shanshan/data/
-```
-
 ## Download the PDFs of the articles given the links obtained from above
 
 ```
 sbatch pdf_download.sh
 ```
 
-All the articles in the PDF format are stored in the **copernicus** folder. It is quite large, the data will not be uploaded here. We manage to download 60,712 pdfs. One can access it from
-```
-/scratch/project_465000454/shanshan/data/
-```
+All the articles in the PDF format are stored in the **copernicus** folder. It is quite large, the data will not be uploaded here. We manage to download 60,712 pdfs.
 
 ## Extract the text content from the articles
 
@@ -42,7 +34,4 @@ The json file is 3.2G in size, the data inside looks like the samples listed bel
 
 ]
 ```
-The total number of tokens in this large json file is 723,178,588, less than 1B tokens. The json file is in
-```
-/scratch/project_465000454/shanshan/data/
-```
+The total number of tokens in this large json file is 723,178,588, less than 1B tokens.
