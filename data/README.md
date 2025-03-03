@@ -3,6 +3,7 @@
 This repo contains scripts which download the scientific publications and extract the text from open access journal copernicus https://publications.copernicus.org/open-access_journals/open_access_journals_a_z.html.
 
 ## Get all the links of the articles
+To speed up processing, we use batching. In the download_links.py script, on line 78, you need to change the value of counter from 0 to 6 and run the following command separately for each counter value.
 
 ```
 sbatch download_links.sh
