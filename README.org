@@ -71,6 +71,3 @@ During the retrieval process, we use 1 gpu interactively
 #+end_src
 
 - Faiss can do more than retrieving one query, with the multiple gpu support, it can handle tens of thousands of queries like stated in this [[https://github.com/facebookresearch/faiss/blob/main/tutorial/python/5-Multiple-GPUs.py][website]].
-
-* License
-  MIT License
