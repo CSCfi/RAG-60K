@@ -57,7 +57,7 @@ During the retrieval process, we use 1 gpu interactively
     module load pytorch
     export HF_HOME=/scratch/project_465000454/${USER}/hf-cache
     huggingface-cli login # put your token in the terminal
-    python retriever_faiss.py
+    python retriever_faiss_llama.py
 #+end_src
 ** Notes
 
