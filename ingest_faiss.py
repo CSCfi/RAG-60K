@@ -11,6 +11,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from tqdm import tqdm
 import faiss
 import numpy as np
+import re
 
 # define the path of the data
 json_file_path = "/scratch/project_462000824/data/extracted_texts.json"
