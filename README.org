@@ -65,9 +65,12 @@ During the retrieval process, we use 1 gpu interactively
 
 - CSC modulefiles and CSC preinstalled pytorch cover most of the libraries needed to run the codes in this project, except langchain library. One can set up their own environment and install langchain and other libraries if needed
 #+begin_src bash
+  module purge
+  module use /appl/local/csc/modulefiles
+  module load pytorch
   python3 -m venv --system-site-packages venv
   source venv/bin/activate
-  pip install langchain
+  pip install -r requirements.txt
 #+end_src
 
 - Faiss can do more than retrieving one query, with the multiple gpu support, it can handle tens of thousands of queries like stated in this [[https://github.com/facebookresearch/faiss/blob/main/tutorial/python/5-Multiple-GPUs.py][website]].
